@@ -1,0 +1,35 @@
+spring:
+  datasource:
+    url: jdbc:mysql://real-rds-mariadb-01.cwmf53obr1bb.ap-northeast-2.rds.amazonaws.com:3306/wp_landing?autoReconnect=true&useUnicode=true&characterEncoding=utf-8
+    username: thecheck
+    password: 6KZ5AM2M3LW6vOw9dZsY
+    driver-class-name: org.mariadb.jdbc.Driver
+#  jpa:
+#    open-in-view: false
+#    generate-ddl: true
+#    show-sql: true
+#    hibernate:
+#      ddl-auto: true
+  mvc:
+    view:
+      prefix: /WEB-INF/jsp/
+      suffix: .jsp
+    static-path-pattern: /static/**
+  resoureces:
+    static-location: classpath:/static/
+    add-mapping: true
+
+devtools:
+  livereload:
+    enabeld: true
+
+server:
+  port: 8080
+  tomcat:
+    basedir: ./
+    accesslog:
+      enabled: true
+      pattern: "%t %a %s \"%r\" %b (%D ms)"
+      directory: log
+      suffix: .log
+      prefix: access
